@@ -13,7 +13,6 @@ public class PracticeFormTests {
 
     @Test
     @DisplayName("Fill Form")
-
     void positiveFormTest() {
         String firstName = "Yuliya",
                 lastName = "Koronkevich",
@@ -34,7 +33,7 @@ public class PracticeFormTests {
                 state = "NCR",
                 city = "Delhi",
                 pictureName = "pic.jpg";
-        File picture = new File("src/test/java/resources/pic.jpg");
+        File picture = new File("src/test/resources/pic.jpg");
 
         // Open form
         open("https://demoqa.com/automation-practice-form");

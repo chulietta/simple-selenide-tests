@@ -33,7 +33,7 @@ public class PracticeFormTests {
                 state = "NCR",
                 city = "Delhi",
                 pictureName = "pic.jpg";
-        File picture = new File("src/test/resources/pic.jpg");
+        //File picture = new File("src/test/resources/pic.jpg");
 
         // Open form
         open("https://demoqa.com/automation-practice-form");
@@ -56,7 +56,8 @@ public class PracticeFormTests {
         $("#hobbiesWrapper").$(byText(hobby1)).click();
         $("#hobbiesWrapper").$(byText(hobby2)).click();
         $("#hobbiesWrapper").$(byText(hobby3)).click();
-        $("#uploadPicture").uploadFile(picture);
+        //$("#uploadPicture").uploadFile(picture);
+        $("#uploadPicture").uploadFromClasspath(pictureName);
         $("#currentAddress").scrollTo().val(address);
         $("#state").click();
         $("#stateCity-wrapper").$(byText(state)).click();

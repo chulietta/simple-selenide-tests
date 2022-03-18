@@ -3,8 +3,6 @@ package tests;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
 
-import java.io.File;
-
 import static com.codeborne.selenide.Condition.text;
 import static com.codeborne.selenide.Selectors.byText;
 import static com.codeborne.selenide.Selenide.*;
@@ -13,7 +11,7 @@ public class PracticeFormTests {
 
     @Test
     @DisplayName("Fill Form")
-    void positiveFormTest() {
+    void positiveFillFormTest() {
         String firstName = "Yuliya",
                 lastName = "Koronkevich",
                 email = "9757975@gmail.com",
@@ -33,7 +31,6 @@ public class PracticeFormTests {
                 state = "NCR",
                 city = "Delhi",
                 pictureName = "pic.jpg";
-        //File picture = new File("src/test/resources/pic.jpg");
 
         // Open form
         open("https://demoqa.com/automation-practice-form");
@@ -56,7 +53,6 @@ public class PracticeFormTests {
         $("#hobbiesWrapper").$(byText(hobby1)).click();
         $("#hobbiesWrapper").$(byText(hobby2)).click();
         $("#hobbiesWrapper").$(byText(hobby3)).click();
-        //$("#uploadPicture").uploadFile(picture);
         $("#uploadPicture").uploadFromClasspath(pictureName);
         $("#currentAddress").scrollTo().val(address);
         $("#state").click();
@@ -78,4 +74,4 @@ public class PracticeFormTests {
         $x("//td[text()='Address']").parent().shouldHave(text(address));
         $x("//td[text()='State and City']").parent().shouldHave(text(state + " " + city));
     }
-};
+}

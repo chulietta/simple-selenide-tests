@@ -13,7 +13,7 @@ public class PracticeFormWithFakerTests {
 
     @Test
     @DisplayName("Fill Form With RandomUtils")
-    void positiveFormTest() {
+    void positiveFillFormWithFakeDataTest() {
         Faker faker = new Faker();
 
         String firstName = faker.name().firstName(),
@@ -78,4 +78,4 @@ public class PracticeFormWithFakerTests {
         $x("//td[text()='Address']").parent().shouldHave(text(address));
         $x("//td[text()='State and City']").parent().shouldHave(text(state + " " + city));
     }
-};
+}

@@ -12,7 +12,7 @@ public class PracticeFormWithRandomUtilsTests {
 
     @Test
     @DisplayName("Fill Form With RandomUtils")
-    void positiveFormTest() {
+    void positiveFillFormWithRandomDataTest() {
         String firstName = getRandomString(8),
                 lastName = getRandomString(12),
                 email = getRandomEmail(),
@@ -75,4 +75,4 @@ public class PracticeFormWithRandomUtilsTests {
         $x("//td[text()='Address']").parent().shouldHave(text(address));
         $x("//td[text()='State and City']").parent().shouldHave(text(state + " " + city));
     }
-};
+}
